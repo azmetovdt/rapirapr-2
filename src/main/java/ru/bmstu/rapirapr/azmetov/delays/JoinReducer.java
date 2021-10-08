@@ -14,7 +14,7 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
         Text systemInfo = new Text(iter.next());
         while (iter.hasNext()) {
             Text call = iter.next();
-            Text outValue = new Text(call.toString() + "\t" + systemInfo.toString());
+            Text outValue = new Text(call.toString() + ":" + systemInfo.toString());
             context.write(key, outValue);
         }
     }

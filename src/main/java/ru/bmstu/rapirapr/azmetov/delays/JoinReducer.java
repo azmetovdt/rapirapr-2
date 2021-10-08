@@ -1,7 +1,6 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
@@ -24,16 +23,6 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
 
     @Override
     public void reduce(TextPair textPair, Iterator<Text> iterator, OutputCollector<Text, Text> outputCollector, Reporter reporter) throws IOException {
-        reporter
-    }
-
-    @Override
-    public void close() throws IOException {
-
-    }
-
-    @Override
-    public void configure(JobConf jobConf) {
-
+    outputCollector.collect();
     }
 }

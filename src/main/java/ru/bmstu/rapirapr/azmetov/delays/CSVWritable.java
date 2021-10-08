@@ -9,11 +9,11 @@ import java.io.IOException;
 public class CSVWritable implements Writable {
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        
+
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-
+        
     }
 }

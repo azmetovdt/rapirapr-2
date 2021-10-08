@@ -16,7 +16,8 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         Text a = (Text) value.get(0);
         Text b = (Text) value.get(1);
         Text value = key.toString().charAt(0) == '"' ?
-                key.toString().split()
+                key.toString().split(",")[1] :
+                
         output.collect(new Text("key"), new Text(a.toString() + b.toString()));
     }
 

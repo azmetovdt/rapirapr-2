@@ -1,7 +1,7 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapred.Reducer;
 
 import java.io.IOException;
 import java.util.Iterator;

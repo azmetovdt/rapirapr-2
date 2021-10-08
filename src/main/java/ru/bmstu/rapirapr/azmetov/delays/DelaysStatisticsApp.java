@@ -4,7 +4,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobConf;
-import org.apache.hadoop.mapred.TextInputFormat;
+import org.apache.hadoop.mapred.KeyValueTextInputFormat;
 import org.apache.hadoop.mapred.join.CompositeInputFormat;
 import org.apache.hadoop.mapreduce.Job;
 
@@ -20,7 +20,7 @@ public class DelaysStatisticsApp {
         conf.setInputFormat(CompositeInputFormat.class);
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         conf.set("mapred.join.expr", CompositeInputFormat.compose("outer",
-                TextInputFormat.class,
+                KeyValueTextInputFormat.class,
                 args[0],
                 args[1]
         ));

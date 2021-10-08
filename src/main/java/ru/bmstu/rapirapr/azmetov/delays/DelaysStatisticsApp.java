@@ -2,9 +2,7 @@ package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
-import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class DelaysStatisticsApp {
@@ -15,6 +13,8 @@ public class DelaysStatisticsApp {
             System.err.println("Usage: ru.bmstu.rapirapr.azmetov.warandpeace.DelaysStatistics <input path> <output path>");
             System.exit(-1);
         }
+        JobConf conf = new JobConf(JoinJob.class);
+
         conf.setInputFormat(CompositeInputFormat.class);
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         conf.set("mapred.join.expr", CompositeInputFormat.compose("inner",

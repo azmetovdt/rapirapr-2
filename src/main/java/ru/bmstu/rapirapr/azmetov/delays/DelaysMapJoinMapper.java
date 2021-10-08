@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class DelaysMapJoinMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     public static final String regex = "[^\\w-\\sа-я]";
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {

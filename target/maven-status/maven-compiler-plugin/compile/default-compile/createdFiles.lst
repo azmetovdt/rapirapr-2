@@ -1,7 +1,5 @@
-ru/bmstu/rapirapr/azmetov/delays/KeyWritable.class
 ru/bmstu/rapirapr/azmetov/delays/FlightWritable.class
 ru/bmstu/rapirapr/azmetov/delays/CSVWritable.class
-ru/bmstu/rapirapr/azmetov/delays/DelaysStatisticsApp.class
 ru/bmstu/rapirapr/azmetov/delays/TextPair.class
 ru/bmstu/rapirapr/azmetov/delays/DelaysMapJoinMapper.class
 ru/bmstu/rapirapr/azmetov/delays/FlightReducer.class

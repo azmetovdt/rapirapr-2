@@ -26,7 +26,7 @@ public class DelaysStatisticsApp {
                 args[1]
         ));
 
-        conf.setMapperClass(MapJoinMapper.class);
+        conf.setMapperClass(DelaysMapJoinMapper.class);
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(Text.class);
         JobClient.runJob(conf);

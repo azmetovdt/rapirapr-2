@@ -2,7 +2,7 @@ package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.io.Text;
 
-public class JoinReducer extends Reducer<TextT, Text, Text, Text> {
+public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
     @Override
     protected void reduce(TextPair key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {

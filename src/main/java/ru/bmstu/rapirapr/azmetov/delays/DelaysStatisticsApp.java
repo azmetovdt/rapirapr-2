@@ -30,6 +30,7 @@ public class DelaysStatisticsApp {
         job.setReducerClass(JoinReducer.class);
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(Text.class);
+        job.
         JobClient.runJob(conf);
     }
 }

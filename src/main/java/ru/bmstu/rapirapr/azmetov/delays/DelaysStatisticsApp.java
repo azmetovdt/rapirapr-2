@@ -20,7 +20,7 @@ public class DelaysStatisticsApp {
         conf.setInputFormat(CompositeInputFormat.class);
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         conf.set("mapred.join.expr", CompositeInputFormat.compose("outer",
-                KeyValueTextInputFormat.class,
+                CSVIp.class,
                 args[0],
                 args[1]
         ));

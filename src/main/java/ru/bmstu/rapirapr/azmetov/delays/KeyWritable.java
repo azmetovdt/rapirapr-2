@@ -8,8 +8,8 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class KeyWritable implements WritableComparable {
-    private static final int isAirport = 0;
-
+    private static int isAirport = 0;
+    
 
     @Override
     public int compareTo(Object o) {

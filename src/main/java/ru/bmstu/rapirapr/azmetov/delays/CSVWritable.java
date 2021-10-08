@@ -17,7 +17,7 @@ public class CSVWritable implements Writable {
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-        code.readFields();
+        code.readFields(dataInput);
 
 
     }

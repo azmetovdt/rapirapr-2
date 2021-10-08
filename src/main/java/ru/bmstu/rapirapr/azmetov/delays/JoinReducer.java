@@ -1,2 +1,4 @@
-package ru.bmstu.rapirapr.azmetov.delays;public class JoinReducer {
+package ru.bmstu.rapirapr.azmetov.delays;
+
+public class JoinReducer {
 }

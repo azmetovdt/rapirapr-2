@@ -17,5 +17,6 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
             Text outValue = new Text(call.toString() + ":" + systemInfo.toString());
             context.write(outValue, outValue);
         }
+        context.write(key, key);
     }
 }

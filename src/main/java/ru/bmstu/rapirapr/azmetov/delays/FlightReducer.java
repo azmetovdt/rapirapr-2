@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class FlightReducer extends Reducer<Text, CSVWritable, Text, CSVWritable> {
     @Override
-    protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws
+    protected void reduce(Text key, Iterable<CSVWritable> values, Context context) throws
     IOException, InterruptedException {
         long count=0;
         Iterator iter = values.iterator();

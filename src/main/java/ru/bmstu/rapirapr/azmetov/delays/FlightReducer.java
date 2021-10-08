@@ -16,8 +16,8 @@ public class FlightReducer extends Reducer<Text, CSVWritable, Text, CSVWritable>
         Iterator iter = values.iterator();
         while(iter.hasNext()) {
             iter.next();
-            count++;
+            context.write(key, new LongWritable(count));
+
         }
-        context.write(key, new LongWritable(count));
     }
 }

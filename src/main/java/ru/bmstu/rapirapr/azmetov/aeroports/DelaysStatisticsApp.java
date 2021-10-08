@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class WordCountApp {
+public class DelaysStatisticsApp {
     public static final String jobName = "DelaysStatisticts";
 
     public static void main(String[] args) throws Exception {

@@ -9,14 +9,13 @@ import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.join.TupleWritable;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
     public void map(Text key, TupleWritable value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         Text a = (Text) value.get(0);
         Text b = (Text) value.get(1);
-        Text value = Arrays.stream(key.toString().split(",")).anyMatch(s -> s.inc)
+        Text value = key.toString().charAt(0) == '"' ? 
         output.collect(new Text("key"), new Text(a.toString() + b.toString()));
     }
 

@@ -1,4 +1,6 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
-public class AirportWritable {
+import org.apache.hadoop.io.Writable;
+
+public class AirportFlightWritable implements Writable {
 }

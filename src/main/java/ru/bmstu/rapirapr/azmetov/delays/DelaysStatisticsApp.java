@@ -19,7 +19,7 @@ public class DelaysStatisticsApp {
         JobConf conf = new JobConf(DelaysStatisticsApp.class);
 
         conf.setInputFormat(CompositeInputFormat.class);
-        FileOutputFormat.setOutputPath(conf, new Path(args[2]));
+        FileOutputFormat.setOutputPath(Job.getInstance(conf), new Path(args[2]));
         conf.set("mapred.join.expr", CompositeInputFormat.compose("inner",
                 KeyValueTextInputFormat.class,
                 args[0],

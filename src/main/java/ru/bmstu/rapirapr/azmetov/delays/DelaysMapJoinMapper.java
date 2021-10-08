@@ -16,6 +16,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
                     Reporter reporter) throws IOException {
         String data = value.toString();
         System.out.println(data);
+        output.collect(value);
     }
 
 }

@@ -16,7 +16,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<LongWri
     public void map(LongWritable key, TupleWritable value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         Text a = (Text) value.get(0);
         Text b = (Text) value.get(1);
-        output.collect(key.toString(), a);
+        output.collect(new Text(key.toString()), a);
     }
 
 }

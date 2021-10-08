@@ -12,13 +12,11 @@ public class CSVWritable implements Writable {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-
+        code.write(dataOutput);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
         code.readFields(dataInput);
-
-
     }
 }

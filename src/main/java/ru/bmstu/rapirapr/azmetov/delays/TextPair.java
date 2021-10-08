@@ -14,5 +14,12 @@ public class TextPair {
         this.firstText = new Text(first);
         this.secondText = new Text(first);
     }
-    
+
+    public Text getFirstText() {
+        return firstText;
+    }
+
+    public Text getSecondText() {
+        return secondText;
+    }
 }

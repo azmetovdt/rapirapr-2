@@ -1,6 +1,10 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+
+import java.io.IOException;
+import java.util.Iterator;
 
 public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
     @Override
@@ -11,7 +15,7 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         while (iter.hasNext()) {
             Text call = iter.next();
             Text outValue = new Text(call.toString() + "\t" + systemInfo.toString());
-            context.write(key.getFirst(), outValue);
+            context.write(key.getFirstText(), outValue);
         }
     }
 }

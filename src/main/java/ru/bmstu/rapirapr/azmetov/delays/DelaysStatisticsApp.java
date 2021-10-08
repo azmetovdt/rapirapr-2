@@ -2,8 +2,12 @@ package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.*;
+import org.apache.hadoop.mapred.FileOutputFormat;
+import org.apache.hadoop.mapred.JobClient;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.KeyValueTextInputFormat;
 import org.apache.hadoop.mapred.join.CompositeInputFormat;
+import org.apache.hadoop.mapreduce.Job;
 
 public class DelaysStatisticsApp {
     public static void main(String[] args) throws Exception {
@@ -22,7 +26,8 @@ public class DelaysStatisticsApp {
                 args[1]
         ));
         conf.setMapperClass(DelaysMapJoinMapper.class);
-        conf.setReducerClass(JoinReducer.class);
+        Job job = Job.getInstance(conf);
+        job.setReducerClass(JoinReducer.class);
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(Text.class);
         JobClient.runJob(conf);

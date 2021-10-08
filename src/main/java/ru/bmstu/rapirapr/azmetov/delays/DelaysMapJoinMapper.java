@@ -1,20 +1,21 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reporter;
+import org.apache.hadoop.mapred.join.TupleWritable;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class DelaysMapJoinMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
-    public static final String regex = "[^\\w-\\sа-я]";
+public class MapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
-    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-    String line = value.toString();
-    String[] words = line.replaceAll(regex,"").toLowerCase().split(" ");
-    for (String word : words) {
-        context.write(new Text(word), new IntWritable(1));
-        }
+    public void map(Text key, TupleWritable value, OutputCollector<Text, Text> output,
+                    Reporter reporter) throws IOException {
+        Text call = (Text) value.get(0);
+        Text system = (Text) value.get(1);
+        output.collect(call, system);
     }
+
 }

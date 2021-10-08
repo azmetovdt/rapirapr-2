@@ -1,10 +1,13 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
-import java.io.*;
-import org.apache.hadoop.io.*;
-import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
 
-public class WordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+import java.io.IOException;
+
+public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     public static final String regex = "[^\\w-\\sа-я]";
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {

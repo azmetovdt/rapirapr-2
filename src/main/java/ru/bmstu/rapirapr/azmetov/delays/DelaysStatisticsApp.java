@@ -20,12 +20,13 @@ public class DelaysStatisticsApp {
         Job job = Job.getInstance(conf);
 
         conf.setInputFormat(CompositeInputFormat.class);
-        FileOutputFormat.setOutputPath(job, new Path(args[2]));
         conf.set("mapred.join.expr", CompositeInputFormat.compose("inner",
                 KeyValueTextInputFormat.class,
                 args[0],
                 args[1]
         ));
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
+
 
         conf.setMapperClass(DelaysMapJoinMapper.class);
         conf.setOutputKeyClass(Text.class);

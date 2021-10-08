@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
-    public void map(Text key, TupleWritable value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
+    public void map(LongWritable key, TupleWritable value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         Text a = (Text) value.get(0);
         Text b = (Text) value.get(1);
         output.collect(key, a);

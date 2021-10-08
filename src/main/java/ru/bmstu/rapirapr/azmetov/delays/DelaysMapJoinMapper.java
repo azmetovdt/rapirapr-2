@@ -1,6 +1,7 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
 
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.MapReduceBase;
 import org.apache.hadoop.mapred.Mapper;
@@ -15,7 +16,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<LongWri
     public void map(LongWritable key, TupleWritable value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         Text a = (Text) value.get(0);
         Text b = (Text) value.get(1);
-        output.collect(key, a);
+        output.collect(key.toString(), a);
     }
 
 }

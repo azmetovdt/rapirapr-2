@@ -22,7 +22,7 @@ public class DelaysStatisticsApp {
                 args[1]
         ));
         conf.setMapperClass(DelaysMapJoinMapper.class);
-        conf.setReducerClass((Class<? extends Reducer>) JoinReducer.class);
+        conf.setReducerClass(JoinReducer.class);
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(Text.class);
         JobClient.runJob(conf);

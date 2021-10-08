@@ -10,13 +10,12 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class DelaysStatisticsApp {
-    public static final String jobName = "DelaysStatistics";
-
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
             System.err.println("Usage: ru.bmstu.rapirapr.azmetov.warandpeace.DelaysStatistics <input path> <output path>");
             System.exit(-1);
         }
+
         JobConf conf = new JobConf(DelaysStatisticsApp.class);
 
         conf.setInputFormat(CompositeInputFormat.class);

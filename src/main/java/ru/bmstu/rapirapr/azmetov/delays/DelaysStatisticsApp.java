@@ -17,6 +17,7 @@ public class DelaysStatisticsApp {
         }
 
         JobConf conf = new JobConf(DelaysStatisticsApp.class);
+        Job job = Job.getInstance(conf);
 
         conf.setInputFormat(CompositeInputFormat.class);
         FileOutputFormat.setOutputPath(Job.getInstance(conf), new Path(args[2]));

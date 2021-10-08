@@ -10,6 +10,10 @@ import java.io.IOException;
 public class CSVWritable implements Writable {
     private static Text code;
 
+    public CSVWritable(Text text) {
+        
+    }
+
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         code.write(dataOutput);

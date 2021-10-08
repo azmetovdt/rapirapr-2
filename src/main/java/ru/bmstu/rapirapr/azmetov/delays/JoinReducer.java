@@ -12,6 +12,7 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
             IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text systemInfo = new Text(iter.next());
+        context.write(systemInfo, systemInfo);
         while (iter.hasNext()) {
             Text call = iter.next();
             Text outValue = new Text(call.toString() + ":" + systemInfo.toString());

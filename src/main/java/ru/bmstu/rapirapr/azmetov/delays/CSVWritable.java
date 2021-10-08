@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class CSVWritable implements Writable {
     private static Text code;
+    private static Text airportName;
 
     public CSVWritable(Text text) {
 

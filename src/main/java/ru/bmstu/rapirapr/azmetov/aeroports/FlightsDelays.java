@@ -1,6 +1,6 @@
 package ru.bmstu.rapirapr.azmetov.aeroports;
 
-
+import org.apache.hadoop.fs.Path;
 public class WordCountApp {
     public static final String jobName = "Word count";
 

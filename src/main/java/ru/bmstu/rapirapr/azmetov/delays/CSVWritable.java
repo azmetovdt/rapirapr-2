@@ -11,7 +11,7 @@ public class CSVWritable implements Writable {
     private static Text code;
 
     public CSVWritable(Text text) {
-        
+
     }
 
     @Override

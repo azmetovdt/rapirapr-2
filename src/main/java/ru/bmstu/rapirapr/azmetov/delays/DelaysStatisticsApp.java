@@ -1,4 +1,4 @@
-package ru.bmstu.rapirapr.azmetov.aeroports;
+package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;

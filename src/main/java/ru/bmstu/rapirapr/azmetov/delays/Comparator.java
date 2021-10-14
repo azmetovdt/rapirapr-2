@@ -5,9 +5,8 @@ import org.apache.hadoop.io.WritableComparator;
 
 public class Comparator extends WritableComparator  implements RawComparator {
 
-
     @Override
-    public int compare(KeyWritable o1, KeyWritable o2) {
-        return o1.compareTo(o2);
+    public int compare(Object o1, Object o2) {
+        return ((KeyWritable) o1).compareTo(KeyWritable) o2);
     }
 }

@@ -12,11 +12,10 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
-        Text firstInfoPiece = new Text(valuesIterator.next());
-        String outValue = firstInfoPiece.toString();
+        String outValue = "";
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
-            if (infoPiece.getLength() > 0)
+            if (!StringUtils.isBlank(infoPiece.toString()))
                 outValue = outValue + "|" + infoPiece;
         }
         if(!StringUtils.isBlank(outValue)) {

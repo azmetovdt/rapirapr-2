@@ -16,7 +16,7 @@ public class DelaysStatisticsApp {
         }
 
         Job job = Job.getInstance();
-        job.setJarByClass(JoinJob.class);
+        job.setJarByClass(DelaysStatisticsApp.class);
         job.setJobName("JoinJob sort");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);

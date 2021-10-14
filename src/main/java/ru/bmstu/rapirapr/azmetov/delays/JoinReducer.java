@@ -9,8 +9,7 @@ import java.util.Iterator;
 
 public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     @Override
-    protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
-            IOException, InterruptedException {
+    protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
         String airportName = "";
         float minDelay = Float.MAX_VALUE, maxDelay = 0, sumDelay = 0;

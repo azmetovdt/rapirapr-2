@@ -11,6 +11,6 @@ public class Comparator extends WritableComparator {
     public int compare(WritableComparable o1, WritableComparable o2)  {
         KeyWritable k1 = (KeyWritable) o1;
         KeyWritable k2 = (KeyWritable) o2;
-        return k2.airportId.compareTo(o2.airportId);
+        return k1.airportId.compareTo(k2.airportId);
     }
 }

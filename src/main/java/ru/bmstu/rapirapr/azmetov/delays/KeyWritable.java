@@ -47,4 +47,6 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
         airportId.readFields(in);
     }
 
+
+
 }

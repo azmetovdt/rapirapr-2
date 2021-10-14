@@ -11,7 +11,7 @@ public class FlightsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, T
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",");
-        context.write(new KeyWritable(csvColumns[0],true), new FlightWritable(csvColumns[18]).delay);
+        context.write(new KeyWritable(csvColumns[14],true), new FlightWritable(csvColumns[18]).delay);
     }
        /* String value = "";
         String airportCode = "";

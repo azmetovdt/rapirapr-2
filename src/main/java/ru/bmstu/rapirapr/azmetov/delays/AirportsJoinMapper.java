@@ -8,10 +8,10 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightsJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class AirportsJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
-        context.write();
+        context.write(new KeyWritable());
     }
        /* String value = "";
         String airportCode = "";

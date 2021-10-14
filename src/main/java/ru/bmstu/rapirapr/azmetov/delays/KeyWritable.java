@@ -9,7 +9,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class KeyWritable implements WritableComparable {
+public class KeyWritable implements WritableComparable<KeyWritable> {
     private BooleanWritable isFlightInfo;
     public Text airportId;
 
@@ -37,9 +37,5 @@ public class KeyWritable implements WritableComparable {
         isFlightInfo.readFields(in);
         airportId.readFields(in);
     }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+    
 }

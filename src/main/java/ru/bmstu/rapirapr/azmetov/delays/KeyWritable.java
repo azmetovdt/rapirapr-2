@@ -15,7 +15,7 @@ public class KeyWritable implements WritableComparable {
 
     @Override
     public int compareTo(Object o) {
-        
+
     }
 
     @Override

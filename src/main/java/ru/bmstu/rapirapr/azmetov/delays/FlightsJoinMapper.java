@@ -6,11 +6,15 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FlightsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String[] csvColumns = value.toString().split(",");
+        String[] csvColumns = Arrays.stream(
+                value.toString().split(",")
+                )
+                .filter();
         context.write(new KeyWritable(csvColumns[14],true), new FlightWritable(csvColumns[18]).delay);
     }
 }

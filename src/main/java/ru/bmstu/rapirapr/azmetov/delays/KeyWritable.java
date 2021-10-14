@@ -47,6 +47,10 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
         airportId.readFields(in);
     }
 
-
+    @Override
+    public int hashCode()
+    {
+        return airportId.hashCode();
+    }
 
 }

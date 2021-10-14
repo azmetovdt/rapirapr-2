@@ -18,7 +18,7 @@ public class KeyWritable implements WritableComparable {
         this.airportId = airportId;
     }
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(KeyWritable o) {
         if(isFlightInfo.compareTo(o.isFlightInfo) == 0) {
             return airportId.compareTo(o.airportId);
         } else {

@@ -22,7 +22,7 @@ public class DelaysStatisticsApp {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightsJoinMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
        // job.setPartitionerClass(HashPartitioner.class);
-        job.setGroupingComparatorClass(WritableComparator.class);
+        //job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(KeyWritable.class);
         job.setMapOutputValueClass(Text.class);

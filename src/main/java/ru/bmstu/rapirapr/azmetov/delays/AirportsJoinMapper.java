@@ -11,7 +11,7 @@ import java.io.IOException;
 public class AirportsJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
-        String[]
+        String[] airportId = value.
         context.write(new KeyWritable());
     }
        /* String value = "";

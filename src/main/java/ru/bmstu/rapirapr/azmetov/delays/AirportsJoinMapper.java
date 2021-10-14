@@ -13,7 +13,7 @@ public class AirportsJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
         String[] csvColumns = value.toString().split(",", 1);
-        context.write(new KeyWritable(new Text(csvColumns[0]), new BooleanWritable(true)), new AirportWritable(csvColumns[1]));
+        context.write(new KeyWritable(csvColumns[0],true), new AirportWritable(csvColumns[1]));
     }
        /* String value = "";
         String airportCode = "";

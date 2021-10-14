@@ -8,6 +8,9 @@ public class Comparator extends WritableComparator {
         if (o1.airportId == null && o2.airportId == null) return 0;
         if (o1.airportId == null) return -1;
         if (o2.airportId == null) return 1;
+        if (o1 == null && o2 == null) return 0;
+        if (o1 == null) return -1;
+        if (o2 == null) return 1;
 
         return o1.airportId.compareTo(o2.airportId);
     }

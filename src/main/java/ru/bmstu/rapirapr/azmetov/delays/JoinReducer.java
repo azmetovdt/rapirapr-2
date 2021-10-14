@@ -26,6 +26,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
 
         if(counter > 0) {
             float averageDelay = sumDelay / counter;
+            String outValue = airportName 
             context.write(new Text(key.airportId), new Text(outValue));
         }
 

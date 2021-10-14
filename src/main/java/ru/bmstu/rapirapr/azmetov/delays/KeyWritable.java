@@ -22,7 +22,7 @@ public class KeyWritable implements WritableComparable {
         if(isFlightInfo.compareTo(o.isFlightInfo) == 0) {
             return airportId.compareTo(o.airportId);
         } else {
-            return 
+            return airportId.
         }
     }
 

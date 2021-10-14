@@ -1,8 +1,9 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
-import org.codehaus.stax2.ri.typed.NumberUtil;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -12,11 +13,14 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
-        Text airportName = valuesIterator.next();
+        String airportName = "";
         float minDelay = 0, maxDelay = Float.MAX_VALUE, sumDelay = 0;
         int counter = 0;
         while (valuesIterator.hasNext()) {
-            if (NumberUtils.i)
+            String value = valuesIterator.next().toString();
+            if (StringUtils.isBlank(airportName) && !NumberUtils.isParsable(value)) {
+                airportName = value;
+            }
             float delay = Float.parseFloat(valuesIterator.next().toString());
             minDelay = Math.min(minDelay, delay);
             maxDelay = Math.max(maxDelay, delay);

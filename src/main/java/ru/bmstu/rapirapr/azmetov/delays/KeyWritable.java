@@ -17,6 +17,10 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
         this.isFlightInfo = isFlightInfo;
         this.airportId = airportId;
     }
+    public KeyWritable(String airportId, boolean isFlightInfo) {
+        this.isFlightInfo = new BooleanWritable(isFlightInfo);
+        this.airportId = new Text(airportId);
+    }
     @Override
     public int compareTo(KeyWritable o) {
         if(isFlightInfo.compareTo(o.isFlightInfo) == 0) {
@@ -37,5 +41,5 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
         isFlightInfo.readFields(in);
         airportId.readFields(in);
     }
-    
+
 }

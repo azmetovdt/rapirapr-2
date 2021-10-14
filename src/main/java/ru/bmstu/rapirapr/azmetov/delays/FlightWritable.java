@@ -11,20 +11,20 @@ public class FlightWritable implements Writable {
     private Text delay;
 
 
-    public FlightWritable(Text airportName) {
-        this.airportName = airportName;
+    public FlightWritable(Text delay) {
+        this.delay = delay;
     }
-    public FlightWritable(String airportName) {
-        this.airportName = new Text(airportName);
+    public FlightWritable(String delay) {
+        this.delay = new Text(delay);
     }
 
     @Override
     public void write(DataOutput out) throws IOException {
-        airportName.write(out);
+        delay.write(out);
     }
 
     @Override
     public void readFields(DataInput in) throws IOException {
-        airportName.readFields(in);
+        delay.readFields(in);
     }
 }

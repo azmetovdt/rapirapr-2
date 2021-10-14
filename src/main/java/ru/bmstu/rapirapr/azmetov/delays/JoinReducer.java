@@ -14,6 +14,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         Iterator<Text> valuesIterator = values.iterator();
         Text AirportName = valuesIterator.next();
         float minDelay = 0, maxDelay = Float.MAX_VALUE;
+        int counter = 0;
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
             if (!StringUtils.isBlank(infoPiece.toString()))

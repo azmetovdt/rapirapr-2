@@ -16,7 +16,8 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         float minDelay = 0, maxDelay = Float.MAX_VALUE, sumDelay = 0;
         int counter = 0;
         while (valuesIterator.hasNext()) {
-            float delay = Float.parseFloat(valuesIterator.next().toString())
+            float delay = Float.parseFloat(valuesIterator.next().toString());
+            
             if (!StringUtils.isBlank(infoPiece.toString()))
                 outValue = outValue + "|" + infoPiece;
         }

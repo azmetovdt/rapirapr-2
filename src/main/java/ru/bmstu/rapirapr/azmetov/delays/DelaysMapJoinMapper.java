@@ -18,7 +18,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         if (key.toString().charAt(0) == '"') {
             value = key.toString().split(",")[1];
         } else if (key.toString().split(",").length > 18) {
-            airportCode = key.toString().split(",")[18];
+            airportCode = key.toString().split(",")[13];
             value =  key.toString().split(",")[18];
 
         } else {

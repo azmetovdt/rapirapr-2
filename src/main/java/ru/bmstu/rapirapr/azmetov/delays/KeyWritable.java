@@ -9,10 +9,12 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class KeyWritable implements WritableComparable {
-    public static IntWritable isAirport;
+    public static IntWritable isFlightInfo;
     public static IntWritable airportId;
 
-    public KeyWritable(String airportId, boolean isAirportInfo)
+    public KeyWritable(String airportId, boolean isFlightInfo) {
+        
+    }
     @Override
     public int compareTo(Object o) {
 
@@ -20,11 +22,11 @@ public class KeyWritable implements WritableComparable {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        isAirport.write(dataOutput);
+        isFlightInfo.write(dataOutput);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-        isAirport.readFields(dataInput);
+        isFlightInfo.readFields(dataInput);
     }
 }

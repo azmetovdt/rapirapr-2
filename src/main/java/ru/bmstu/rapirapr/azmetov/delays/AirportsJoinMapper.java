@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportsJoinMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, AirportWritable> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
         String[] csvColumns = value.toString().split(",", 1);

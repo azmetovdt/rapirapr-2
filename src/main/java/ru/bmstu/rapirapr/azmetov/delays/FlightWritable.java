@@ -9,12 +9,12 @@ import java.io.IOException;
 
 public class FlightWritable implements Writable {
     private Text delay;
-    
 
-    public AirportWritable(Text airportName) {
+
+    public FlightWritable(Text airportName) {
         this.airportName = airportName;
     }
-    public AirportWritable(String airportName) {
+    public FlightWritable(String airportName) {
         this.airportName = new Text(airportName);
     }
 

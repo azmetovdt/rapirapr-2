@@ -13,7 +13,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
         Text AirportName = valuesIterator.next();
-        float min
+        float minDelay = 0, maxDelay = Float.MAX_VALUE;
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
             if (!StringUtils.isBlank(infoPiece.toString()))

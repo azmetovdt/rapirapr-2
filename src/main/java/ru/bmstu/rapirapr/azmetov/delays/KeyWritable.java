@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class KeyWritable implements WritableComparable<KeyWritable> {
     private BooleanWritable isFlightInfo;
-    public Text airportId;
+    private Text airportId;
 
     public KeyWritable(Text airportId, BooleanWritable isFlightInfo) {
         this.isFlightInfo = isFlightInfo;

@@ -22,7 +22,7 @@ public class KeyWritable implements WritableComparable {
         if(isFlightInfo.compareTo(o.isFlightInfo) == 0) {
             return airportId.compareTo(o.airportId);
         } else {
-            return airportId.
+            return isFlightInfo.equals(new BooleanWritable(true)) ? 1 : -1;
         }
     }
 
@@ -36,5 +36,10 @@ public class KeyWritable implements WritableComparable {
     public void readFields(DataInput in) throws IOException {
         isFlightInfo.readFields(in);
         airportId.readFields(in);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

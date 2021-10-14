@@ -13,10 +13,10 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         Text systemInfo = new Text(iter.next());
         context.write(key, new Text(""));
-        while (iter.hasNext()) {
+       /* while (iter.hasNext()) {
             Text call = iter.next();
             Text outValue = new Text(call.toString() + ":" + systemInfo.toString());
             context.write(call, outValue);
-        }
+        } */
     }
 }

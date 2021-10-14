@@ -24,7 +24,7 @@ public class DelaysStatisticsApp {
       //  job.setPartitionerClass(HashPartitioner.class);
       //  job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
-        job.setOutputKeyClass(KeyWritable.class);
+        job.setMapOutputKeyClass(KeyWritable.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);

@@ -28,10 +28,10 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
     }
     @Override
     public int compareTo(KeyWritable o) {
-        if(isFlightInfo.equals(o.isFlightInfo)) {
-            return airportId.compareTo(o.airportId);
+        if (airportId.equals(o.airportId)) {
+            return isFlightInfo.compareTo(o.isFlightInfo);
         } else {
-            return isFlightInfo.equals(new BooleanWritable(true)) ? 1 : -1;
+            return airportId.compareTo(o.airportId);
         }
     }
 

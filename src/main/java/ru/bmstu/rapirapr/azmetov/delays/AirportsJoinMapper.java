@@ -12,7 +12,7 @@ public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, 
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",", 2);
         context.write(new KeyWritable(csvColumns[0],true),
-               csvColumns.length > 1 ?  new AirportWritable(csvColumns[1]).airportName : new AirportWritable("EXCEPTION").airportName);
+                new AirportWritable(csvColumns[1]).airportName;
     }
        /* String value = "";
         String airportCode = "";

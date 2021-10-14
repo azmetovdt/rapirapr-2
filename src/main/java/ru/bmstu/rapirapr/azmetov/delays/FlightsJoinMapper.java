@@ -10,7 +10,7 @@ import org.apache.hadoop.mapred.join.TupleWritable;
 
 import java.io.IOException;
 
-public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
+public class FlightsJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
     public void map(Text key, TupleWritable v, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         String value = "";

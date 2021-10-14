@@ -13,6 +13,11 @@ public class KeyWritable implements WritableComparable<KeyWritable> {
     private BooleanWritable isFlightInfo;
     public Text airportId;
 
+    public KeyWritable() {
+        this.isFlightInfo = new BooleanWritable();
+        this.airportId = new Text();
+    }
+
     public KeyWritable(Text airportId, BooleanWritable isFlightInfo) {
         this.isFlightInfo = isFlightInfo;
         this.airportId = airportId;

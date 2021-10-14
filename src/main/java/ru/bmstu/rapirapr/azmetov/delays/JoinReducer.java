@@ -17,12 +17,15 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         int counter = 0;
         while (valuesIterator.hasNext()) {
             float delay = Float.parseFloat(valuesIterator.next().toString());
-            
-            if (!StringUtils.isBlank(infoPiece.toString()))
-                outValue = outValue + "|" + infoPiece;
+            minDelay = Math.min(minDelay, delay);
+            minDelay = Math.max(maxDelay, delay);
+            sumDelay += delay;
+            counter++;
         }
-        if(!StringUtils.isBlank(outValue)) {
 
+
+        if(counter > 0) {
+            float averageDelay = sumDelay / counter;
             context.write(new Text(key.airportId), new Text(outValue));
         }
 

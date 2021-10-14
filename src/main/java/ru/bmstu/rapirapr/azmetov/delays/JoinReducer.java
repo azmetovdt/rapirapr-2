@@ -18,7 +18,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
             if (infoPiece.getLength() > 0 && infoPiece.toString() != "0.00")
             outValue = outValue + "|" + infoPiece;
         }
-        context.write(key.airportId, new Text(outValue));
+        context.write(new Text(key.airportId + "@@@"), new Text(outValue));
 
     }
 }

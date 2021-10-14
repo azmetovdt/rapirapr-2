@@ -1,6 +1,5 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
@@ -26,7 +25,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
 
         if(counter > 0) {
             float averageDelay = sumDelay / counter;
-            String outValue = String.format("%s %s %s")
+            String outValue = String.format("%s %s %s %s", airportName, minDelay, maxDelay, averageDelay);
             context.write(new Text(key.airportId), new Text(outValue));
         }
 

@@ -21,8 +21,8 @@ public class DelaysStatisticsApp {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightsJoinMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        job.setPartitionerClass(HashPartitioner.class);
-        job.setGroupingComparatorClass(WritableComparator.class);
+      //  job.setPartitionerClass(HashPartitioner.class);
+      //  job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setOutputKeyClass(KeyWritable.class);
         job.setOutputValueClass(Text.class);

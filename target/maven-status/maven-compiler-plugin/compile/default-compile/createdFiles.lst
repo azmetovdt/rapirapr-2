@@ -1,6 +1,6 @@
 ru/bmstu/rapirapr/azmetov/delays/FlightsJoinMapper.class
 ru/bmstu/rapirapr/azmetov/delays/KeyWritable.class
-ru/bmstu/rapirapr/azmetov/delays/HashPartitioner.class
+ru/bmstu/rapirapr/azmetov/delays/MyPartitioner.class
 ru/bmstu/rapirapr/azmetov/delays/FlightWritable.class
 ru/bmstu/rapirapr/azmetov/delays/AirportsJoinMapper.class
 ru/bmstu/rapirapr/azmetov/delays/DelaysStatisticsApp.class

@@ -14,9 +14,11 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
     @Override
     public void map(Text key, TupleWritable v, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         String value = "";
+        String airportCode = "";
         if (key.toString().charAt(0) == '"') {
             value = key.toString().split(",")[1];
         } else if (key.toString().split(",").length > 18) {
+            airportCode
             value =  key.toString().split(",")[18];
 
         } else {

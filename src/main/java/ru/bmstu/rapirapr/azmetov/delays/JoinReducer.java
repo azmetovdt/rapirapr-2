@@ -17,11 +17,10 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         while (valuesIterator.hasNext()) {
             float delay = Float.parseFloat(valuesIterator.next().toString());
             minDelay = Math.min(minDelay, delay);
-            minDelay = Math.max(maxDelay, delay);
+            maxDelay = Math.max(maxDelay, delay);
             sumDelay += delay;
             counter++;
         }
-
 
         if(counter > 0) {
             float averageDelay = sumDelay / counter;

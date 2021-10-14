@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class JoinReducer extends Reducer<Text, Text, Text, Text> {
     @Override
-    protected void reduce(Text key, Iterable<Text> values, Context context) throws
+    protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
         Text firstInfoPiece = new Text(valuesIterator.next());
@@ -18,7 +18,7 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
             if (infoPiece.getLength() > 0 && infoPiece.toString() != "0.00")
             outValue = outValue + "|" + infoPiece;
         }
-        context.write(key, new Text(outValue));
+        context.write(key.airportId, new Text(outValue));
 
     }
 }

@@ -15,7 +15,7 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
             Text outValue = new Text(infoPiece.toString() + ":" + airportInfo.toString());
-            context.write(infoPiece, outValue);
+            context.write(key, outValue);
         }
     }
 }

@@ -1,8 +1,10 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
-public class Comparator {
+import org.apache.hadoop.io.RawComparator;
 
-    public int compare(KeyWritable o1, KeyWritable o2) {
+public class Comparator extends RawComparator {
+
+    public int compare(KeyWritable o1, KeyWritable o2)  {
         return o1.compareTo(o2);
     }
 }

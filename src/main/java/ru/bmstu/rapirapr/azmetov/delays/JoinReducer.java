@@ -12,11 +12,11 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
-        Text AirportName = valuesIterator.next();
-        float minDelay = 0, maxDelay = Float.MAX_VALUE;
-        int counter = 0; int
+        Text airportName = valuesIterator.next();
+        float minDelay = 0, maxDelay = Float.MAX_VALUE, sumDelay = 0;
+        int counter = 0;
         while (valuesIterator.hasNext()) {
-            Text infoPiece = valuesIterator.next();
+            float delay = Float.parseFloat(valuesIterator.next().toString())
             if (!StringUtils.isBlank(infoPiece.toString()))
                 outValue = outValue + "|" + infoPiece;
         }

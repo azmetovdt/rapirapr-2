@@ -13,6 +13,7 @@ public class AirportWritable implements Writable {
     public AirportWritable(Text airportName) {
         this.airportName = airportName;
     }
+
     public AirportWritable(String airportName) {
         this.airportName = new Text(airportName);
     }

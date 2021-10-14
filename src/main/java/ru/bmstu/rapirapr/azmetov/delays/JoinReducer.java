@@ -12,7 +12,8 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
-        String outValue = "";
+        Text AirportName = valuesIterator.next();
+        
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
             if (!StringUtils.isBlank(infoPiece.toString()))

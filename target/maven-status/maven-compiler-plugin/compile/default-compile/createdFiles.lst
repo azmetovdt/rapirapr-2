@@ -4,7 +4,6 @@ ru/bmstu/rapirapr/azmetov/delays/MyPartitioner.class
 ru/bmstu/rapirapr/azmetov/delays/FlightWritable.class
 ru/bmstu/rapirapr/azmetov/delays/AirportsJoinMapper.class
 ru/bmstu/rapirapr/azmetov/delays/DelaysStatisticsApp.class
-ru/bmstu/rapirapr/azmetov/delays/TextPair.class
 ru/bmstu/rapirapr/azmetov/delays/AirportWritable.class
 ru/bmstu/rapirapr/azmetov/delays/Comparator.class
 ru/bmstu/rapirapr/azmetov/delays/JoinReducer.class

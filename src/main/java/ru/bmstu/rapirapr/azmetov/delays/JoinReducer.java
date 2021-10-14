@@ -18,7 +18,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
             if (infoPiece.getLength() > 0)
                 outValue = outValue + "|" + infoPiece;
         }
-        if(outValue.length() > 0) {
+        if(!outValue.isEmpty()) {
             context.write(new Text(key.airportId), new Text(outValue));
         }
 

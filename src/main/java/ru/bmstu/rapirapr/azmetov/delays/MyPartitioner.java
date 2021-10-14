@@ -6,6 +6,6 @@ import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
 public class MyPartitioner extends HashPartitioner<KeyWritable, Text> {
 
     public int getPartition(KeyWritable key, Text value, int numReduceTasks) {
-        return key.hashCode() % numReduceTasks;
+        return key.hashCode();
     }
 }

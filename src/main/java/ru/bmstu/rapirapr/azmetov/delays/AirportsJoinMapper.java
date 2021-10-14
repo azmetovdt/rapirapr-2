@@ -7,12 +7,12 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, AirportWritable> {
+public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",", 1);
         context.write(new KeyWritable(csvColumns[0],true),
-               csvColumns.length > 1 ?  new AirportWritable(csvColumns[1]) : new AirportWritable("EXCEPTION"));
+               csvColumns.length > 1 ?  new AirportWritable(csvColumns[1]).airportName : new AirportWritable("EXCEPTION").airportName);
     }
        /* String value = "";
         String airportCode = "";

@@ -18,6 +18,8 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
             value = key.toString().split(",")[1];
         } else if (key.toString().split(",").length > 18) {
             value =  key.toString().split(",")[18];
+        } else {
+            value =  key.toString();
         }
 
         output.collect(new Text(value), new Text(value));

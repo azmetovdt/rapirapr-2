@@ -12,7 +12,7 @@ public class KeyWritable implements WritableComparable {
     public static IntWritable isAirport;
     public static IntWritable airportId;
 
-
+    public KeyWritable(String airportId, boolean)
     @Override
     public int compareTo(Object o) {
 

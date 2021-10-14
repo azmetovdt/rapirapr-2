@@ -7,17 +7,15 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import javax.security.auth.login.AppConfigurationEntry;
-import javax.security.auth.login.Configuration;
-
 public class DelaysStatisticsApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
             System.err.println("Usage: ru.bmstu.rapirapr.azmetov.warandpeace.DelaysStatistics <input1 path> <input2 path> <output path>");
             System.exit(-1);
         }
-        Configuration conf = new Configuration();
+
         Job job = Job.getInstance();
+        job.set
         job.setJarByClass(DelaysStatisticsApp.class);
         job.setJobName("DelaysStatisticsApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportsJoinMapper.class);

@@ -1,17 +1,15 @@
 package ru.bmstu.rapirapr.azmetov.delays;
 
 
-import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.join.TupleWritable;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
 public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, AirportWritable> {
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException {
+    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",", 1);
         context.write(new KeyWritable(csvColumns[0],true), new AirportWritable(csvColumns[1]));
     }

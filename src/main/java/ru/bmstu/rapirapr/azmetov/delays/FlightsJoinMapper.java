@@ -12,7 +12,8 @@ public class FlightsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, T
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",");
         String delay = csvColumns[14];
-        if (delay != '0')
-        context.write(new KeyWritable(csvColumns[14],true), new FlightWritable(csvColumns[18]).delay);
+        if (delay != "0.00") {
+            context.write(new KeyWritable(delay, true), new FlightWritable(csvColumns[18]).delay);
+        }
     }
 }

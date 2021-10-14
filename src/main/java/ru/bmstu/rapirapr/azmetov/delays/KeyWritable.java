@@ -10,12 +10,12 @@ import java.io.IOException;
 
 public class KeyWritable implements WritableComparable {
     private static IntWritable isAirport;
-    private static IntWritable airportID;
+    private static IntWritable airportId;
 
 
     @Override
     public int compareTo(Object o) {
-
+    
 
     }
 

@@ -9,7 +9,6 @@ import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.join.TupleWritable;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
@@ -17,14 +16,11 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         String value = "";
         if (key.toString().charAt(0) == '"') {
             value = key.toString().split(",")[1];
-        } else if (key.toString().split(",").length >)
-        Text value = new Text(
-                key.toString().charAt(0) == '"' ?
-                key.toString().split(",")[1] :
-                        Arrays.toString(key.toString().split(","))
-        );
+        } else if (key.toString().split(",").length > 18) {
+            value =  key.toString().split(",")[18];
+        }
 
-        output.collect(value, value);
+        output.collect(new Text(value), new Text(value));
     }
 
 }

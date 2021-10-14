@@ -22,4 +22,4 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         output.collect(value, value);
     }
 
-} 
+}

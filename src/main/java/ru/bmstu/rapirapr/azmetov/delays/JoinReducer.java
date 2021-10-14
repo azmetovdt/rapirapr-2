@@ -15,7 +15,7 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
         String outValue = firstInfoPiece.toString();
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
-            outValue = outValue + "|" + infoPiece.toString();
+            outValue = outValue + "|" + infoPiece;
         }
         context.write(key, new Text(outValue));
 

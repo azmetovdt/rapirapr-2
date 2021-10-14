@@ -10,7 +10,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class KeyWritable implements WritableComparable<KeyWritable> {
-    private BooleanWritable isFlightInfo;
+    public BooleanWritable isFlightInfo;
     public Text airportId;
 
     public KeyWritable() {

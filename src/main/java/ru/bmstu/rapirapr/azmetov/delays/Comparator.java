@@ -7,6 +7,6 @@ public class Comparator extends WritableComparator  implements RawComparator {
 
     @Override
     public int compare(Object o1, Object o2) {
-        return ((KeyWritable) o1).compareTo(KeyWritable) o2);
+        return ((KeyWritable) o1).compareTo((KeyWritable) o2);
     }
 }

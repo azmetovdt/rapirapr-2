@@ -8,7 +8,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportWritable implements Writable {
-    private Text airportName;
+    public Text airportName;
 
     public AirportWritable(Text airportName) {
         this.airportName = airportName;

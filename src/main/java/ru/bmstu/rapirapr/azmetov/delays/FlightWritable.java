@@ -8,7 +8,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class FlightWritable implements Writable {
-    private Text delay;
+    public Text delay;
 
 
     public FlightWritable(Text delay) {

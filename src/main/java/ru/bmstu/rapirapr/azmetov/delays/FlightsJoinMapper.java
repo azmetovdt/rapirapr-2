@@ -13,19 +13,4 @@ public class FlightsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, T
         String[] csvColumns = value.toString().split(",");
         context.write(new KeyWritable(csvColumns[14],true), new FlightWritable(csvColumns[18]).delay);
     }
-       /* String value = "";
-        String airportCode = "";
-        if (key.toString().charAt(0) == '"') {
-            value = key.toString().split(",")[1];
-        } else if (key.toString().split(",").length > 18) {
-            airportCode = key.toString().split(",")[13];
-            value =  key.toString().split(",")[18];
-
-        } else {
-            value =  key.toString();
-        }
-
-        output.collect(new Text(airportCode), new Text(value));
-    }
- */
 }

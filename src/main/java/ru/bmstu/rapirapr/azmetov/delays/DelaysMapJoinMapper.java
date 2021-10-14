@@ -14,6 +14,10 @@ import java.util.Arrays;
 public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
     public void map(Text key, TupleWritable v, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
+        String value = "";
+        if (key.toString().charAt(0) == '"') {
+            value = key.toString().split(",")[1];
+        } else if (key.toString().split(",").length >)
         Text value = new Text(
                 key.toString().charAt(0) == '"' ?
                 key.toString().split(",")[1] :

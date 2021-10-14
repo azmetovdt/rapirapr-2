@@ -23,12 +23,14 @@ public class KeyWritable implements WritableComparable {
     }
 
     @Override
-    public void write(DataOutput dataOutput) throws IOException {
-        isFlightInfo.write(dataOutput);
+    public void write(DataOutput out) throws IOException {
+        isFlightInfo.write(out);
+        airportId.write(out);
     }
 
     @Override
-    public void readFields(DataInput dataInput) throws IOException {
-        isFlightInfo.readFields(dataInput);
+    public void readFields(DataInput in) throws IOException {
+        isFlightInfo.readFields(in);
+        airportId.readFields(in);
     }
 }

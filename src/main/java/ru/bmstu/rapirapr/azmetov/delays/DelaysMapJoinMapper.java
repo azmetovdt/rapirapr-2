@@ -9,6 +9,7 @@ import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.join.TupleWritable;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, TupleWritable, Text, Text> {
     @Override
@@ -16,7 +17,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         Text value = new Text(
                 key.toString().charAt(0) == '"' ?
                 key.toString().split(",")[1] :
-                        key.toString()
+                        Arrays.toString(key.toString().split(","))
         );
 
         output.collect(value, value);

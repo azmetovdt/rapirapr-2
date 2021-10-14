@@ -22,7 +22,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
             counter++;
         }
 
-        if(counter > 0) {
+        if (counter > 0) {
             float averageDelay = sumDelay / counter;
             String outValue = String.format("%s %s %s %s", airportName, minDelay, maxDelay, averageDelay);
             context.write(new Text(key.airportId), new Text(outValue));

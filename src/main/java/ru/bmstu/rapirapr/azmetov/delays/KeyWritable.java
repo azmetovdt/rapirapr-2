@@ -9,14 +9,13 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class KeyWritable implements WritableComparable {
-    private static IntWritable isAirport;
-    private static IntWritable airportId;
+    public static IntWritable isAirport;
+    public static IntWritable airportId;
 
 
     @Override
     public int compareTo(Object o) {
-    
-
+        
     }
 
     @Override

@@ -2,6 +2,7 @@ package ru.bmstu.rapirapr.azmetov.delays;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
+import org.codehaus.stax2.ri.typed.NumberUtil;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -15,7 +16,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         float minDelay = 0, maxDelay = Float.MAX_VALUE, sumDelay = 0;
         int counter = 0;
         while (valuesIterator.hasNext()) {
-            if (Float.pa)
+            if (NumberUtils.i)
             float delay = Float.parseFloat(valuesIterator.next().toString());
             minDelay = Math.min(minDelay, delay);
             maxDelay = Math.max(maxDelay, delay);

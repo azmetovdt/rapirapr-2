@@ -10,7 +10,7 @@ import java.io.IOException;
 public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String[] csvColumns = value.toString().split(",", 1);
+        String[] csvColumns = value.toString().split(",", 2);
         context.write(new KeyWritable(csvColumns[0],true),
                csvColumns.length > 1 ?  new AirportWritable(csvColumns[1]).airportName : new AirportWritable("EXCEPTION").airportName);
     }

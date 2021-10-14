@@ -24,7 +24,7 @@ public class DelaysMapJoinMapper extends MapReduceBase implements Mapper<Text, T
         } else {
             value =  key.toString();
         }
-   
+
         output.collect(new Text(airportCode), new Text(value));
     }
 

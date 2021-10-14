@@ -11,11 +11,10 @@ public class JoinReducer extends Reducer<Text, Text, Text, Text> {
     protected void reduce(Text key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
-        Text airportInfo = new Text(valuesIterator.next());
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
             Text outValue = new Text(infoPiece.toString() + ":" + airportInfo.toString());
-            context.write(key, outValue);
         }
+
     }
 }

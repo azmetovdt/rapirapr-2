@@ -15,7 +15,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         String outValue = firstInfoPiece.toString();
         while (valuesIterator.hasNext()) {
             Text infoPiece = valuesIterator.next();
-            if (infoPiece.getLength() > 0 && infoPiece.toString() != "0.00")
+            if (infoPiece.getLength() > 0)
                 outValue = outValue + "|" + infoPiece;
         }
         context.write(new Text(key.airportId), new Text(outValue));

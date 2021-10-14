@@ -11,7 +11,7 @@ public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] csvColumns = value.toString().split(",", 2);
-        if (!csvColumns[0].equals(new Text("Code"))) {
+        if (csvColumns[0] != "Code") {
             context.write(new KeyWritable(csvColumns[0], true),
                     new AirportWritable(csvColumns[1]).airportName);
         }

@@ -23,7 +23,7 @@ public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, 
             );
         }
     }
-
+fewfewfwe
     private String trimQuotationMark(String s) {
         return s.replaceAll(QUOTE_SYMBOLS_REGEX, "");
     }

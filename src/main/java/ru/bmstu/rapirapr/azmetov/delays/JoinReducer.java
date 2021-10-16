@@ -18,7 +18,7 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
         while (valuesIterator.hasNext()) {
             String value = valuesIterator.next().toString();
             if (!NumberUtils.isParsable(value)) {
-                airportName = value;
+                airportName = value; 
             } else {
                 float delay = Float.parseFloat(value);
                 minDelay = Math.min(minDelay, delay);

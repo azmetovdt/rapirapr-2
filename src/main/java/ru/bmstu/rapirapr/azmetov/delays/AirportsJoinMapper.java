@@ -18,13 +18,13 @@ public class AirportsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, 
         String[] csvColumns = value.toString().split(COLUMNS_DELIMITER, 2);
         if (!key.equals(new LongWritable(0))) {
             context.write(
-                    new KeyWritable(trimQuotationMark(csvColumns[AIRPORT_ID_COL_NUMBER]), false),
+                    new KeyWritable(removeQuotationSymbols(csvColumns[AIRPORT_ID_COL_NUMBER]), false),
                     new AirportWritable(csvColumns[AIRPORT_NAME_COL_NUMBER]).airportName
             );
         }
     }
 
-    private String trimQuotationMark(String s) {
+    private String removeQuotationSymbols(String s) {
         return s.replaceAll(QUOTE_SYMBOLS_REGEX, "");
     }
 }

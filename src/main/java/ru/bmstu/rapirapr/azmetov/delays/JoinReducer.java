@@ -12,8 +12,9 @@ public class JoinReducer extends Reducer<KeyWritable, Text, Text, Text> {
     protected void reduce(KeyWritable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> valuesIterator = values.iterator();
         String airportName = "";
-        float minDelay = Float.MAX_VALUE, maxDelay = 0, sumDelay = 0;
         int counter = 0;
+        float minDelay = Float.MAX_VALUE, maxDelay = 0, sumDelay = 0;
+
         while (valuesIterator.hasNext()) {
             String value = valuesIterator.next().toString();
             if (!NumberUtils.isParsable(value)) {

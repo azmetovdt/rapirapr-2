@@ -3,8 +3,8 @@ package ru.bmstu.rapirapr.azmetov.delays;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class Comparator extends WritableComparator {
-    protected Comparator() {
+public class KeyComparator extends WritableComparator {
+    protected KeyComparator() {
         super(KeyWritable.class, true);
     }
     @Override

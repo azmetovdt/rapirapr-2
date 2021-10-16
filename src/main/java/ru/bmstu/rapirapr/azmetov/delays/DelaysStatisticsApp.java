@@ -15,14 +15,13 @@ public class DelaysStatisticsApp {
         }
 
         Job job = Job.getInstance();
-       // job.getConfiguration().set("textinputformat.record.delimiter", "a");
         job.setJarByClass(DelaysStatisticsApp.class);
         job.setJobName("DelaysStatisticsApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightsJoinMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(MyPartitioner.class);
-        job.setGroupingComparatorClass(Comparator.class);
+        job.setGroupingComparatorClass(KeyComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(KeyWritable.class);
         job.setMapOutputValueClass(Text.class);

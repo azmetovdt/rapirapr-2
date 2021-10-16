@@ -9,12 +9,16 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightsJoinMapper extends Mapper<LongWritable, Text, KeyWritable, Text> {
+    public static final int AIRPORT_ID_COL_NUMBER = 14;
+    public static final int DELAY_COL_NUMBER = 18;
+    public static  final String CSV_DELIMITER = ",";
+
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String[] csvColumns = value.toString().split(",");
-        String delay = csvColumns[18];
-        if (delay != "0.00" && !StringUtils.isBlank(delay)) {
-            context.write(new KeyWritable(csvColumns[14], true), new FlightWritable(delay).delay);
+        String[] csvColumns = value.toString().split(CSV_DELIMITER);
+        String delay = csvColumns[DELAY_COL_NUMBER];
+        if (Float.parseFloat(delay) != 0 && StringUtils.isNotBlank(delay)) {
+            context.write(new KeyWritable(csvColumns[AIRPORT_ID_COL_NUMBER], true), new FlightWritable(delay).delay);
         }
     }
 }
